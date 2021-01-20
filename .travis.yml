@@ -59,7 +59,7 @@ install:
 
 script:
   - travis_retry tox
-  - coverage run tests.py
+  - coverage run conftest.py
   
 # Push the results back to codecov
 after_success:
