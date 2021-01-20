@@ -55,6 +55,12 @@ matrix:
           arch : ppc64le
 install:
   - travis_retry pip install tox
+  - pip install codecov
 
 script:
   - travis_retry tox
+  - coverage run tests.py
+  
+# Push the results back to codecov
+after_success:
+  - codecov
